@@ -1,0 +1,6 @@
+{
+    "npmsentinel": {
+      "command": "npx",
+      "args": ["-y", "@nekzus/mcp-server@latest"]
+    }  
+}

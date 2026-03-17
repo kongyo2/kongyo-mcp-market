@@ -1,0 +1,6 @@
+{
+  "deepwiki-ask": {
+    "command": "npx",
+    "args": ["@kongyo2/deepwiki-ask"]
+  }
+}

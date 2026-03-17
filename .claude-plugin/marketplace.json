@@ -1,0 +1,32 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "kongyo-mcp-market",
+  "description": "普段使いしているMCPを付け外ししやすくする用",
+  "owner": {
+    "name": "kongyo2",
+    "email": ""
+  },
+  "plugins": [
+    {
+      "name": "deepwiki-ask",
+      "description": "、、、mcpとして使う分にはdeepwikiのwiki部分って要らないのでは?",
+      "category": "development",
+      "source": "./plugins/deepwiki-ask",
+      "homepage": "https://www.npmjs.com/package/@kongyo2/deepwiki-ask"
+    },
+    {
+      "name": "npm-sentinel-mcp",
+      "description": "npmパッケージを探したり、分析したり等するやつ。以前まではやたらとツールが多いせいでコンテキストを逼迫していたがclaude code側の動的ローディングアプデで欠点が消滅した。",
+      "category": "development",
+      "source": "./plugins/npm-sentinel-mcp",
+      "homepage": "https://github.com/Nekzus/npm-sentinel-mcp"
+    },
+    {
+      "name": "deepwiki",
+      "description": "こっちは普通のdeepwiki",
+      "category": "development",
+      "source": "./plugins/deepwiki",
+      "homepage": "https://docs.devin.ai/ja/work-with-devin/deepwiki-mcp"
+    }
+  ]
+}
