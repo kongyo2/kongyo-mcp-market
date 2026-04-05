@@ -1,0 +1,9 @@
+{
+  "agent-skills": {
+    "command": "npx",
+    "args": [
+      "mcp-remote",
+      "https://agentskills.io/mcp"
+    ]
+  }
+}

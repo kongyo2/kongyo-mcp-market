@@ -1,4 +1,4 @@
 {
   "name": "deepwiki-ask",
-  "description": "、、、mcpとして使う分にはdeepwikiのwiki部分って要らないのでは?"
+  "description": "DeepWiki MCPの`ask_question`だけを切り出した軽量MCP。GitHubリポジトリについて質問すると、コードとドキュメントに基づく回答を返す。"
 }

@@ -9,24 +9,31 @@
   "plugins": [
     {
       "name": "deepwiki-ask",
-      "description": "、、、mcpとして使う分にはdeepwikiのwiki部分って要らないのでは?",
+      "description": "DeepWiki MCPの`ask_question`だけを切り出した軽量MCP。GitHubリポジトリについて質問すると、コードとドキュメントに基づく回答を返す。",
       "category": "development",
       "source": "./plugins/deepwiki-ask",
       "homepage": "https://www.npmjs.com/package/@kongyo2/deepwiki-ask"
     },
     {
       "name": "npm-sentinel-mcp",
-      "description": "npmパッケージを探したり、分析したり等するやつ。以前まではやたらとツールが多いせいでコンテキストを逼迫していたがclaude code側の動的ローディングアプデで欠点が消滅した。",
+      "description": "npmパッケージのバージョン、依存関係、セキュリティ、品質指標を横断的に調べられるMCP。比較やトレンド確認にも向く。",
       "category": "development",
       "source": "./plugins/npm-sentinel-mcp",
       "homepage": "https://github.com/Nekzus/npm-sentinel-mcp"
     },
     {
       "name": "deepwiki",
-      "description": "こっちは普通のdeepwiki",
+      "description": "公開GitHubリポジトリのドキュメント構造取得、本文閲覧、質問応答を行える公式DeepWiki MCP。",
       "category": "development",
       "source": "./plugins/deepwiki",
       "homepage": "https://docs.devin.ai/ja/work-with-devin/deepwiki-mcp"
+    },
+    {
+      "name": "agent-skills",
+      "description": "Agent Skillsのナレッジベースを検索し、関連ページ全文を取得できるMCP。コード例、APIリファレンス、ガイドの参照に向く。",
+      "category": "development",
+      "source": "./plugins/agent-skills",
+      "homepage": "https://agentskills.io/mcp"
     }
   ]
 }

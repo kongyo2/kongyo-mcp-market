@@ -1,4 +1,4 @@
 {
   "name": "deepwiki",
-  "description": "こっちは普通のdeepwiki"
+  "description": "公開GitHubリポジトリのドキュメント構造取得、本文閲覧、質問応答を行える公式DeepWiki MCP。"
 }
