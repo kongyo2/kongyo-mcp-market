@@ -1,0 +1,4 @@
+{
+  "name": "npm-info",
+  "description": "npm パッケージの検索、詳細、バージョン履歴、依存関係、README、型定義、品質スコアを取得できるMCP。TypeScript開発中のライブラリ調査に向く。"
+}

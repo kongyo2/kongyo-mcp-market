@@ -1,0 +1,6 @@
+{
+  "npm-info": {
+    "command": "npx",
+    "args": ["-y", "@kongyo2/npm-info-mcp-server"]
+  }
+}

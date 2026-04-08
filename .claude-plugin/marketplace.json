@@ -34,6 +34,13 @@
       "category": "development",
       "source": "./plugins/agent-skills",
       "homepage": "https://agentskills.io/mcp"
+    },
+    {
+      "name": "npm-info",
+      "description": "npm パッケージの検索、詳細、バージョン履歴、依存関係、README、型定義、品質スコアを取得できるMCP。TypeScript開発中のライブラリ調査に向く。",
+      "category": "development",
+      "source": "./plugins/npm-info",
+      "homepage": "https://github.com/kongyo2/npm-info"
     }
   ]
 }
