@@ -3,9 +3,9 @@ name: Validate Frontmatter
 on:
   pull_request:
     paths:
-      - '**/agents/*.md'
-      - '**/skills/*/SKILL.md'
-      - '**/commands/*.md'
+      - '**/agents/**/*.md'
+      - '**/skills/**/SKILL.md'
+      - '**/commands/**/*.md'
 
 jobs:
   validate:
@@ -43,4 +43,6 @@ jobs:
         run: |
           # Pass via env var (not `${{ }}` interpolation) to avoid shell injection
           # from attacker-controlled file names in fork PRs.
-          echo "$CHANGED_FILES" | xargs bun .github/scripts/validate-frontmatter.ts
+          # Use `xargs -d '\n'` (GNU) so filenames containing spaces/quotes are
+          # split only on newline boundaries.
+          printf '%s\n' "$CHANGED_FILES" | xargs -d '\n' bun .github/scripts/validate-frontmatter.ts
