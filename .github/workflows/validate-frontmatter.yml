@@ -1,0 +1,48 @@
+name: Validate Frontmatter
+
+on:
+  pull_request:
+    paths:
+      - '**/agents/**/*.md'
+      - '**/skills/**/SKILL.md'
+      - '**/commands/**/*.md'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: cd .github/scripts && bun install yaml
+
+      - name: Get changed frontmatter files
+        id: changed
+        run: |
+          # `gh pr diff` does not support --diff-filter; filter deleted files
+          # by checking existence on disk after checkout (deleted files won't exist).
+          FILES=$(gh pr diff "$PR_NUMBER" --name-only \
+            | grep -E '(agents/.*\.md|skills/.*/SKILL\.md|commands/.*\.md)$' \
+            | while IFS= read -r f; do [ -f "$f" ] && printf '%s\n' "$f"; done \
+            || true)
+          {
+            echo "files<<EOF"
+            echo "$FILES"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+
+      - name: Validate frontmatter
+        if: steps.changed.outputs.files != ''
+        env:
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+        run: |
+          # Pass via env var (not `${{ }}` interpolation) to avoid shell injection
+          # from attacker-controlled file names in fork PRs.
+          # Use `xargs -d '\n'` (GNU) so filenames containing spaces/quotes are
+          # split only on newline boundaries.
+          printf '%s\n' "$CHANGED_FILES" | xargs -d '\n' bun .github/scripts/validate-frontmatter.ts

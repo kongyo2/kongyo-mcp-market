@@ -8,18 +8,11 @@
   },
   "plugins": [
     {
-      "name": "deepwiki-ask",
-      "description": "DeepWiki MCPの`ask_question`だけを切り出した軽量MCP。GitHubリポジトリについて質問すると、コードとドキュメントに基づく回答を返す。",
+      "name": "agent-skills",
+      "description": "Agent Skillsのナレッジベースを検索し、関連ページ全文を取得できるMCP。コード例、APIリファレンス、ガイドの参照に向く。",
       "category": "development",
-      "source": "./plugins/deepwiki-ask",
-      "homepage": "https://www.npmjs.com/package/@kongyo2/deepwiki-ask"
-    },
-    {
-      "name": "npm-sentinel-mcp",
-      "description": "npmパッケージのバージョン、依存関係、セキュリティ、品質指標を横断的に調べられるMCP。比較やトレンド確認にも向く。",
-      "category": "development",
-      "source": "./plugins/npm-sentinel-mcp",
-      "homepage": "https://github.com/Nekzus/npm-sentinel-mcp"
+      "source": "./plugins/agent-skills",
+      "homepage": "https://agentskills.io/mcp"
     },
     {
       "name": "deepwiki",
@@ -29,11 +22,11 @@
       "homepage": "https://docs.devin.ai/ja/work-with-devin/deepwiki-mcp"
     },
     {
-      "name": "agent-skills",
-      "description": "Agent Skillsのナレッジベースを検索し、関連ページ全文を取得できるMCP。コード例、APIリファレンス、ガイドの参照に向く。",
+      "name": "deepwiki-ask",
+      "description": "DeepWiki MCPの`ask_question`だけを切り出した軽量MCP。GitHubリポジトリについて質問すると、コードとドキュメントに基づく回答を返す。",
       "category": "development",
-      "source": "./plugins/agent-skills",
-      "homepage": "https://agentskills.io/mcp"
+      "source": "./plugins/deepwiki-ask",
+      "homepage": "https://www.npmjs.com/package/@kongyo2/deepwiki-ask"
     },
     {
       "name": "npm-info",
@@ -41,6 +34,13 @@
       "category": "development",
       "source": "./plugins/npm-info",
       "homepage": "https://github.com/kongyo2/npm-info"
+    },
+    {
+      "name": "npm-sentinel-mcp",
+      "description": "npmパッケージのバージョン、依存関係、セキュリティ、品質指標を横断的に調べられるMCP。比較やトレンド確認にも向く。",
+      "category": "development",
+      "source": "./plugins/npm-sentinel-mcp",
+      "homepage": "https://github.com/Nekzus/npm-sentinel-mcp"
     }
   ]
 }
