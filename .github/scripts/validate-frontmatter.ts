@@ -131,7 +131,7 @@ function validateSkill(
   if (!frontmatter["description"] && !frontmatter["when_to_use"]) {
     issues.push({
       level: "error",
-      message: 'Missing required "description" field',
+      message: 'Missing required "description" or "when_to_use" field',
     });
   }
 
