@@ -50,8 +50,11 @@ async function main() {
     }
     const entry = p as Record<string, unknown>;
     for (const field of required) {
-      if (!entry[field]) {
-        errors.push(`plugins[${i}] (${entry.name ?? "?"}): missing required field "${field}"`);
+      const value = entry[field];
+      if (typeof value !== "string" || value.trim() === "") {
+        errors.push(
+          `plugins[${i}] (${entry.name ?? "?"}): required field "${field}" must be a non-empty string`,
+        );
       }
     }
     if (typeof entry.name === "string") {

@@ -128,10 +128,16 @@ function validateSkill(
 ): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
 
-  if (!frontmatter["description"] && !frontmatter["when_to_use"]) {
+  const description = frontmatter["description"];
+  const whenToUse = frontmatter["when_to_use"];
+  const hasDescription = typeof description === "string" && description.length > 0;
+  const hasWhenToUse = typeof whenToUse === "string" && whenToUse.length > 0;
+
+  if (!hasDescription && !hasWhenToUse) {
     issues.push({
       level: "error",
-      message: 'Missing required "description" or "when_to_use" field',
+      message:
+        'Missing required "description" or "when_to_use" field (must be a non-empty string)',
     });
   }
 
